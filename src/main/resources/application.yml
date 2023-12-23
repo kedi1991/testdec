@@ -1,0 +1,21 @@
+provider:
+  host: https://localhost:9443 #change it
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          wso2:
+            client-name : testfo
+            client-id: dlGHciO9E7QXZLmAnUcQUzdy6aQa #Change client-id
+            client-secret: 1PzcD24cLI4i4c7HnOtnedIDl68a # Change client-secret
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/wso2
+            scope: openid
+        provider:
+          wso2:
+            issuer-uri: ${provider.host}/oauth2/token
+  thymeleaf:
+    cache: false
+
